@@ -10,5 +10,15 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
+    # Change password urls
+    path('password-change/',auth_views.PasswordChangeView.as_view(),name='password_change'),
+    path('password-change/done/',auth_views.PasswordChangeDoneView.as_view(),name='password_change_done'),
+
+    #reset password urls
+    path('password-rest',auth_views.PasswordResetView.as_view(),name='password_reset'),
+    path('password-rest/done/',auth_views.PasswordResetDoneView.as_view(),name='password_reset_done'),
+    path('password-rest/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
+    path('password-rest/complete/',auth_views.PasswordResetCompleteView.as_view(),name='password_reset_complete'),
+
     path('',views.dashboard, name='dashboard'),
 ]
