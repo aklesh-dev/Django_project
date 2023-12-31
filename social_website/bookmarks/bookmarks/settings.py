@@ -123,9 +123,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# URL to redirect the user to after sucessful login
+# URL to redirect the user to after successful login
 LOGIN_REDIRECT_URL = 'dashboard'
 # URL to redirect the user to login
 LOGIN_URL = 'login'
 # URL to redirect the user to logout
 LOGOUT_URL ='logout'
+# SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
