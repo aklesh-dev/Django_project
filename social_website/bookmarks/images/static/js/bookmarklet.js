@@ -13,12 +13,12 @@ head.appendChild(link);
 
 // --Load HTML
 var body = document.getElementsByTagName('body')[0];
-boxHtml = `
-    <div id="bookmarklet">
-        <a href= "#" id="close">&times;</a>
-        <h1>Select an image to bookmark:</h1>
-        <div class="images"></div>
-    </div>`;
+// boxHtml = "<div id='bookmarklet'> <a href= '#' id='close'>&times;</a> <h1>Select an image to bookmark:</h1> <div class='images'></div> </div>";
+boxHtml = `<div id="bookmarklet">
+                <a href="#" id="close">&times;</a>
+                <h1>Select an image to bookmark:</h1>
+                <div class="images"></div>
+            </div>`;
 body.innerHTML += boxHtml;
 
 // --Function to launch the bookmarklet.
@@ -47,7 +47,7 @@ function bookmarkletLaunch(){
     // --select image event
     imagesFound.querySelectorAll('img').forEach(image => {
         image.addEventListener('click', function(event){
-            imageSelector = event.target;
+            imageSelected = event.target;
             bookmarklet.style.display = 'none';
             window.open(siteUrl + 'images/create/?url='
                         + encodeURIComponent(imageSelected.src)
