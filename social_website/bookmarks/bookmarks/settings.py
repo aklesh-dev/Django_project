@@ -175,4 +175,4 @@ SOCIAL_AUTH_PIPELINE = [
 #     mimetypes.add_type('text/css', '.css', True)
 
 # --easy thumbnails
-THUMBNAIL_DEBUG = True
+# THUMBNAIL_DEBUG = True
